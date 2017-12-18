@@ -4,23 +4,25 @@ var auto = [
     ['LRS 222', 49506, 3250],
     ['LRS 223', 0, 0]
 ];
-var headers = ['Valst.Nr.', 'Atstumas, km', 'Sugaištas laikas, h'];
+var headersPolice = ['Valstybiniai numeriai', 'Nuvaziuotas atstumas, km', 'Sugaistas laikas, h', 'Vidutinis greitis, km/h'];
 
-createTable(auto, headers);
-function createTable(auto, headers){
+createTable(auto, headersPolice);
+function createTable(auto, headersPolice){
     var text = '';
+
     text += '<table border="5">';
     text += '<thead>';
     text += '<tr>';
-    for(var i =0; i<headers.length; i++){
-        text += '<td>' + headers[i] + '</td>';
+    for(var i =0; i<headersPolice.length; i++){
+        text += '<td>' + headersPolice[i] + '</td>';
+
     }
     text += '</tr>';
     text += '</thead>';
     text += '<tbody>';
     for(var i=0; i < auto.length; i++){
         text += '<tr>';
-        var laikas;
+        var greitis, laikas;
         for (var j = 0; j < auto[i].length; j++){
             text += '<td>' ;
             switch (j){
@@ -37,10 +39,12 @@ function createTable(auto, headers){
             }
             text += '</td>';
         }
+        text += '<td>' + (atstumas / laikas).toFixed(0) + '</td>';
         text += '</tr>';
+
     }
     text += '</tbody>';
     text += '</table>';
 
-    document.querySelector('.table').innerHTML = text;
-    }
+    document.querySelector('.resultTable').innerHTML = text;
+}
