@@ -1,9 +1,30 @@
-body{
-
-}
-h1{
+.data {
     font-family: Chandas;
     display: flex;
     justify-content: center;
     color: #008000;
+}
+.table{
+    display: flex;
+    justify-content: center;
+    font-family: Chandas;
+    text-align: center;
+}
+.button{
+    font-family: Chandas;
+    display: flex;
+    justify-content: center;
+}
+.result{
+    font-family: Chandas;
+    display: flex;
+    justify-content: center;
+    color: #ff0000
+}
+.resultTable{
+    display: flex;
+    justify-content: center;
+    font-family: Chandas;
+    text-align: center;
+    font-size: 16px;
 }
